@@ -1,0 +1,32 @@
+{
+  "name": "personal-budget-backend",
+  "version": "1.0.0",
+  "description": "Backend API for a personal budget tracking web app using Express, Prisma, and PostgreSQL.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "lint": "echo 'Add your preferred linter (ESLint) if needed'"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "5.19.1",
+    "bcryptjs": "latest",
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "express-rate-limit": "latest",
+    "express-validator": "latest",
+    "helmet": "latest",
+    "jsonwebtoken": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "latest",
+    "prisma": "5.19.1"
+  }
+}

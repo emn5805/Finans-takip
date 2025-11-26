@@ -1,0 +1,81 @@
+==============================
+Personal Budget Backend - Setup Guide
+==============================
+
+0. Requirements
+   - A computer with internet access.
+   - A free Supabase account (https://supabase.com/).
+   - A free Render account (https://render.com/) for deployment later.
+
+1. Install Node.js
+   a. Visit https://nodejs.org/en/download.
+   b. Download the "LTS" (Long-Term Support) installer for Windows.
+   c. Run the installer and accept all default options. This also installs npm (Node Package Manager).
+   d. After installation, open PowerShell and run:
+        node -v
+        npm -v
+      You should see version numbers printed.
+
+2. Create the project folder
+   a. Choose a location (for example, Desktop).
+   b. Create a folder named `Finans-takip` (or any name you like).
+   c. Copy all files provided in this deliverable into that folder.
+
+3. Initialize npm (package manager)
+   a. Open PowerShell inside the project folder (Shift + Right-click -> "Open PowerShell window here").
+   b. Run:
+        npm install
+      This installs every dependency defined in package.json.
+
+4. Install Prisma CLI globally (optional but recommended so `npx prisma` is faster)
+        npm install -g prisma
+
+5. Create the `.env` file
+   a. Inside the project folder, create a file named `.env`.
+   b. Follow the instructions in `env-guide.md` to fill in each value.
+
+6. Generate Prisma client & run first migration
+        npx prisma generate
+        npx prisma migrate dev --name init
+
+7. Start the development server
+        npm run dev
+   - The server starts at http://localhost:4000 by default (configurable via .env PORT).
+   - Use tools such as Postman or your frontend to call the API endpoints.
+
+8. Running in production mode (locally)
+        npm start
+
+9. Next steps
+   - Keep `npm run dev` running during development; it reloads when files change (thanks to nodemon).
+   - When ready to deploy, see `deployment.md`.
+
+==============================
+Frontend (Vite + React + Tailwind)
+==============================
+
+1. Gerekenler
+   - Node.js zaten kurulu olduğu için ek gereksinim yok.
+
+2. Kurulum
+   a. Terminalde proje klasöründeyken `client` klasörüne girin:
+        cd client
+   b. Bağımlılıkları yükleyin:
+        npm install
+
+3. Çevre değişkeni
+   - `client/.env.example` dosyasını kopyalayıp `.env` yapın. Varsayılan değer:
+        VITE_API_BASE_URL=http://localhost:4000/api
+   - Backend farklı bir host/portta ise URL’yi güncelleyin.
+
+4. Geliştirme sunucusu
+        npm run dev
+   - Vite varsayılan olarak http://localhost:5173 adresinde açılır. Arayüz, backend API’si ile konuşur.
+
+5. Üretim build’i
+        npm run build
+   - Derlenen dosyalar `client/dist` klasöründe olur. Ön yüzü Render gibi bir yerde dağıtacaksanız bu klasörü kullanın.
+
+6. Yayın ipuçları
+   - Frontend’i Render Static Sites veya Vercel/Netlify üzerinde barındırabilirsiniz.
+   - Backend Render’da çalışıyorsa `VITE_API_BASE_URL` değerini Render API URL’siyle değiştirin.
