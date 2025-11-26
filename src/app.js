@@ -34,6 +34,10 @@ app.get('/health', (_req, res) => {
 
 app.use('/api', routes);
 
+app.get('/', (_req, res) => {
+  res.status(200).json({ message: 'Welcome to the Finance Tracker API' });
+});
+
 app.use(notFoundHandler);
 app.use(errorHandler);
 
