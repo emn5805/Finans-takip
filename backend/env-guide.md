@@ -5,7 +5,7 @@ Create a file named `.env` in the project root with the following keys:
 ```
 PORT=4000
 NODE_ENV=development
-CLIENT_URL=http://localhost:5173
+CLIENT_URL=https://butcetakip.onrender.com
 DATABASE_URL=
 JWT_SECRET=
 ```

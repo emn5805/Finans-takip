@@ -40,7 +40,7 @@ Personal Budget Backend - Setup Guide
 
 7. Start the development server
         npm run dev
-   - The server starts at http://localhost:4000 by default (configurable via .env PORT).
+   - The server starts at https://butcetakip.onrender.com by default (configurable via .env PORT).
    - Use tools such as Postman or your frontend to call the API endpoints.
 
 8. Running in production mode (locally)
@@ -65,12 +65,12 @@ Frontend (Vite + React + Tailwind)
 
 3. Çevre değişkeni
    - `client/.env.example` dosyasını kopyalayıp `.env` yapın. Varsayılan değer:
-        VITE_API_BASE_URL=http://localhost:4000/api
+        VITE_API_BASE_URL=https://butcetakip.onrender.com/api
    - Backend farklı bir host/portta ise URL’yi güncelleyin.
 
 4. Geliştirme sunucusu
         npm run dev
-   - Vite varsayılan olarak http://localhost:5173 adresinde açılır. Arayüz, backend API’si ile konuşur.
+   - Vite varsayılan olarak https://butcetakip.onrender.com adresinde açılır. Arayüz, backend API’si ile konuşur.
 
 5. Üretim build’i
         npm run build
